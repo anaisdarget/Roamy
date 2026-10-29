@@ -1,0 +1,84 @@
+// Roamy — Prisma schema
+// SQLite for local development. Types are kept Postgres-compatible:
+// arrays are serialised JSON strings, statuses are validated string unions in app code.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model TripRequest {
+  id                 String     @id @default(cuid())
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+  destination        String
+  startDate          DateTime
+  endDate            DateTime
+  flexibleDates      Boolean    @default(false)
+  adults             Int        @default(1)
+  children           Int        @default(0)
+  babies             Int        @default(0)
+  budgetLevel        String     @default("confort")
+  budgetAmount       Int        @default(700)
+  currency           String     @default("EUR")
+  interests          String     @default("[]") // JSON string[]
+  rhythm             String     @default("equilibre")
+  dietary            String?
+  accommodation      String?
+  transport          String?
+  notes              String?
+  firstName          String
+  email              String
+  consent            Boolean    @default(false)
+  plan               String     @default("premium")
+  status             String     @default("draft")
+  locale             String     @default("fr")
+  stripeSessionId    String?    @unique
+  paymentIntentId    String?
+  generationAttempts Int        @default(0)
+  lastError          String?
+  itinerary          Itinerary?
+  emailLogs          EmailLog[]
+
+  @@index([email])
+  @@index([status])
+}
+
+model Itinerary {
+  id            String      @id @default(cuid())
+  tripRequestId String      @unique
+  tripRequest   TripRequest @relation(fields: [tripRequestId], references: [id], onDelete: Cascade)
+  json          String
+  pdf           Bytes?
+  modelUsed     String
+  tokensUsed    Int?
+  createdAt     DateTime    @default(now())
+}
+
+model EmailLog {
+  id            String      @id @default(cuid())
+  tripRequestId String
+  tripRequest   TripRequest @relation(fields: [tripRequestId], references: [id], onDelete: Cascade)
+  resendId      String?
+  status        String
+  subject       String?
+  previewHtml   String?
+  createdAt     DateTime    @default(now())
+
+  @@index([tripRequestId])
+}
+
+model MagicLinkToken {
+  id        String    @id @default(cuid())
+  email     String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([email])
+}
