@@ -183,6 +183,7 @@ Roamy/
 | Rate limiting | In-memory fixed window | Zero infra for local; documented production swap |
 | Dashboard | Implemented minimally | Implied by "Retour à mes voyages" and avatar |
 | DB enums | String + zod unions | SQLite local support; Postgres portable |
+| Prisma version | Prisma 6.19.3 | Latest stable line with the established `prisma-client-js` generator; Prisma 8 is still RC and 7 introduces config changes. The schema stays Postgres-compatible and can be upgraded with a config-only change. |
 
 ## 8. Known risks
 
