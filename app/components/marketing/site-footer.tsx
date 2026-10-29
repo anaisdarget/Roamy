@@ -90,7 +90,7 @@ export function SiteFooter() {
           </p>
         </div>
 
-        <div className="pointer-events-none overflow-hidden pt-2 select-none" aria-hidden="true">
+        <div className="pointer-events-none overflow-hidden pt-2 pb-10 select-none" aria-hidden="true">
           <p className="font-display text-framboise-dark/90 pb-4 text-center text-[clamp(5rem,21vw,17rem)] leading-[1] tracking-tight whitespace-nowrap">
             roamy
           </p>
