@@ -126,6 +126,7 @@ Roamy/
     ├── lib/{ai,api,auth,config,data,db,email,jobs,payments,pdf,schemas,stores,trips,utils}/
     ├── prisma/schema.prisma
     ├── public/{images,fonts,og-image.png,icon.svg}
+    ├── emails/itinerary-preview.tsx     # npm run email:dev fixture
     ├── scripts/
     └── tests/{unit,e2e}/
 ```
