@@ -1,9 +1,12 @@
 import { after, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { runGenerationJob } from "@/lib/jobs/generation";
-import { getClientIp, rateLimit, tooManyRequests } from "@/lib/api/guard";
+import { assertSameOrigin, getClientIp, rateLimit, tooManyRequests } from "@/lib/api/guard";
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const originError = assertSameOrigin(request);
+  if (originError) return originError;
+
   const limit = rateLimit(`retry:${getClientIp(request)}`, {
     limit: 5,
     windowMs: 30 * 60 * 1000,

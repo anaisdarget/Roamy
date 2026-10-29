@@ -79,7 +79,7 @@ Last updated: 2026-10-29
 - Real credentials integration (Stripe test mode, Anthropic, Resend) — code paths ready, not executed here.
 - Lighthouse mobile run and final performance tuning.
 - Full screen-reader + keyboard audit (axe + manual) on all screens.
-- Email client QA on Gmail / Apple Mail / Outlook (Litmus or real accounts).
+- Email client QA on Gmail / Apple Mail / Outlook (Litmus or real accounts). `npm run email:dev` now renders a fixture preview locally.
 - Real photography + legal copy.
 - Optional: editable itinerary (currently "Personnaliser" sends back to planner), promo-code UX, account deletion self-serve.
 
