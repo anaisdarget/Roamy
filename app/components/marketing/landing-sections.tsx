@@ -54,16 +54,16 @@ const HOW_STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="comment" className="bg-framboise text-cream scroll-mt-24 py-20 md:py-24">
+    <section id="comment" className="bg-framboise text-white scroll-mt-24 py-20 md:py-24">
       <div className="container-page flex flex-col gap-12">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
             eyebrow="Simplicité totale"
             eyebrowTone="prune"
-            title={<span className="text-cream">Comment ça marche</span>}
-            titleClassName="text-cream"
+            title={<span className="text-white">Comment ça marche</span>}
+            titleClassName="text-white"
           />
-          <p className="text-cream max-w-md text-[16px] leading-relaxed md:text-[17px]">
+          <p className="text-white max-w-md text-[16px] leading-relaxed md:text-[17px]">
             Oublie les 42 onglets ouverts et les guides poussiéreux. Roamy structure ton périple
             sans prise de tête.
           </p>
@@ -478,12 +478,12 @@ export function PricingSection() {
               key={plan.id}
               className={`relative flex flex-col justify-between rounded-[2rem] p-7 md:p-9 ${
                 plan.highlight
-                  ? "bg-framboise text-cream"
+                  ? "bg-framboise text-white"
                   : "border-blush bg-paper text-prune border"
               }`}
             >
               {plan.highlight ? (
-                <span className="bg-orange absolute -top-4 right-7 rounded-full px-4 py-1.5 text-[11px] font-extrabold tracking-[0.09em] text-white uppercase">
+                <span className="bg-orange absolute -top-4 right-7 rounded-full px-4 py-1.5 text-[11px] font-extrabold tracking-[0.09em] text-prune uppercase">
                   Le plus aimé
                 </span>
               ) : null}
@@ -511,7 +511,7 @@ export function PricingSection() {
                     {formatPrice(plan.priceCents)}
                   </span>
                   <span
-                    className={`text-[14px] ${plan.highlight ? "text-cream/85" : "text-prune/70"}`}
+                    className={`text-[14px] ${plan.highlight ? "text-white" : "text-prune/70"}`}
                   >
                     / itinéraire complet
                   </span>
@@ -519,7 +519,7 @@ export function PricingSection() {
 
                 <p
                   className={`text-[15px] leading-relaxed ${
-                    plan.highlight ? "text-cream" : "text-prune/80"
+                    plan.highlight ? "text-white" : "text-prune/80"
                   }`}
                 >
                   {plan.description}
@@ -561,7 +561,7 @@ export function PricingSection() {
 
 export function FinalCta() {
   return (
-    <section className="bg-framboise-deep text-cream relative overflow-hidden py-20 md:py-24">
+    <section className="bg-framboise-deep text-white relative overflow-hidden py-20 md:py-24">
       <SunSticker className="absolute -right-20 -bottom-24 size-80 opacity-20" rotate={0} />
       <LemonSticker className="absolute top-10 -left-10 size-32 opacity-90" rotate={-12} />
       <StarSticker className="absolute top-10 right-[18%] size-14" rotate={8} />
@@ -572,7 +572,7 @@ export function FinalCta() {
         <h2 className="font-display text-butter max-w-3xl text-[clamp(2.5rem,6vw,4.5rem)] leading-[0.95] uppercase">
           Prêt pour ta prochaine aventure ?
         </h2>
-        <p className="text-cream max-w-xl text-[17px] md:text-lg">
+        <p className="text-white max-w-xl text-[17px] md:text-lg">
           Réponds au questionnaire en quelques clics et laisse Roamy s&apos;occuper du reste. Tes
           vacances parfaites commencent ici.
         </p>
@@ -582,7 +582,7 @@ export function FinalCta() {
             <ArrowRight className="size-5" aria-hidden="true" />
           </Link>
         </Button>
-        <div className="text-cream/80 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12px]">
+        <div className="text-white flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12px]">
           <span>🔒 Paiement sécurisé</span>
           <span aria-hidden="true">•</span>
           <span>⚡ Génération en 3 min</span>

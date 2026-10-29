@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const anton = localFont({
-  src: "../public/fonts/Anton-Regular.ttf",
+  src: "../public/fonts/Anton-Regular.woff2",
   variable: "--font-anton",
   weight: "400",
   style: "normal",
@@ -12,7 +12,7 @@ const anton = localFont({
 });
 
 const nunito = localFont({
-  src: "../public/fonts/Nunito-Variable.ttf",
+  src: "../public/fonts/NunitoSans-Variable.woff2",
   variable: "--font-nunito",
   weight: "200 900",
   style: "normal",

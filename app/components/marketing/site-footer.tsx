@@ -72,7 +72,7 @@ export function SiteFooter() {
               <ul className="text-cream/85 flex flex-col gap-3 text-[14px]">
                 {column.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="hover:text-butter transition-colors">
+                    <Link href={link.href} className="hover:text-butter inline-block py-1 transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -91,7 +91,7 @@ export function SiteFooter() {
         </div>
 
         <div className="pointer-events-none overflow-hidden pt-2 pb-10 select-none" aria-hidden="true">
-          <p className="font-display text-framboise-dark/90 pb-4 text-center text-[clamp(5rem,21vw,17rem)] leading-[1] tracking-tight whitespace-nowrap">
+          <p className="font-display text-framboise pb-4 text-center text-[clamp(5rem,21vw,17rem)] leading-[1] tracking-tight whitespace-nowrap">
             roamy
           </p>
         </div>

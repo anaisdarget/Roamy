@@ -11,6 +11,7 @@ The visual identity is based on the supplied Google Stitch mockups: cream paper,
 - **Email**: Resend + React Email (mock delivery included)
 - **PDF**: `@react-pdf/renderer`
 - **Tests**: Vitest + Playwright
+- **Measured**: Lighthouse mobile 98 performance / 100 accessibility / 100 best practices / 100 SEO (production build)
 
 The mockups and design audit live in `docs/` and `design/`. The application lives in **`app/`**.
 

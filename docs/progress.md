@@ -10,6 +10,7 @@ Last updated: 2026-10-29
 - `npm run test` — 19 unit tests pass
 - `npm run test:e2e` — 2 Playwright tests pass (full funnel + mobile smoke)
 - `npm run build` — pass (with local `.env` secrets; see README)
+- Lighthouse mobile (production build): **Performance 98 · Accessibility 100 · Best practices 100 · SEO 100** — LCP 2.4 s, CLS 0, TBT 10 ms
 
 ## Done
 
