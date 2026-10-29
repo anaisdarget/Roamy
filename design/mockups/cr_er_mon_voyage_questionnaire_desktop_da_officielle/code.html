@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="fr" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_blank" name="shell-type">
+<title>Roamy - Mon voyage</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "prune": "#4A0F2E",
+            "framboise": "#D6336C",
+            "blush": "#FF4FA3",
+            "orange-vitamine": "#FA7443",
+            "butter": "#FFE99A",
+            "cream-stripe": "#FFF6E0",
+            "rose-stripe": "#FFE0EA",
+            "cream-soft": "#FFF9F2",
+            "white": "#FFFFFF"
+          },
+          fontFamily: {
+            headline: ["Anton", "sans-serif"],
+            body: ["Nunito", "sans-serif"]
+          },
+          borderRadius: {
+            'DEFAULT': '1rem',
+            'lg': '2rem',
+            'xl': '2.5rem',
+            'full': '9999px'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-cream-soft font-body text-prune antialiased selection:bg-butter selection:text-prune min-h-screen">
+<main class="w-full min-h-screen flex flex-col justify-center items-center py-10 px-4 relative overflow-hidden" style="background-image: repeating-linear-gradient(90deg, #FFE0EA, #FFE0EA 48px, #FFF6E0 48px, #FFF6E0 50px);">
+<!-- Decorative Tropical Accents / Flowers -->
+<!-- Top Left Flower (Rose framboise & Butter center) -->
+<div class="absolute -top-8 -left-8 w-48 h-48 text-framboise pointer-events-none z-0 rotate-12">
+<svg class="w-full h-full" fill="currentColor" viewBox="0 0 100 100">
+<path d="M50 18 C58 2, 78 12, 70 30 C88 28, 94 48, 80 60 C94 72, 80 92, 64 82 C56 98, 36 94, 38 78 C20 86, 10 68, 24 54 C8 44, 18 22, 34 30 C30 14, 46 4, 50 18 Z"></path>
+<circle cx="50" cy="50" fill="#FFE99A" r="11"></circle>
+</svg>
+</div>
+<!-- Right Floral Accent (Rose blush & framboise center) -->
+<div class="absolute top-44 -right-12 w-52 h-52 text-blush pointer-events-none z-0 -rotate-12">
+<svg class="w-full h-full" fill="currentColor" viewBox="0 0 100 100">
+<path d="M50 8 C62 -4, 82 8, 76 26 C94 28, 98 48, 84 62 C96 78, 80 96, 62 86 C52 100, 32 94, 36 76 C18 82, 10 62, 26 48 C10 36, 22 16, 38 24 C36 8, 48 -2, 50 8 Z"></path>
+<circle cx="50" cy="50" fill="#D6336C" r="10"></circle>
+</svg>
+</div>
+<!-- Bottom Left Sun/Flower Graphic (Orange vitaminé) -->
+<div class="absolute bottom-8 left-6 w-32 h-32 text-orange-vitamine pointer-events-none z-0">
+<svg class="w-full h-full" fill="currentColor" viewBox="0 0 100 100">
+<circle cx="50" cy="50" fill="#FA7443" r="21"></circle>
+<path d="M50 10 L50 20 M50 80 L50 90 M10 50 L20 50 M80 50 L90 50 M22 22 L29 29 M71 71 L78 78 M22 78 L29 71 M71 29 L78 22" stroke="#FA7443" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</div>
+<!-- Central Card Wrapper (Max-width 880px, Flat 32px Radius, Pure White, Flat Design) -->
+<div class="relative z-10 w-full max-w-[880px] bg-white rounded-xl p-8 sm:p-12 flex flex-col gap-8">
+<!-- Progress Header Section -->
+<header class="flex flex-col gap-3 w-full">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase tracking-wider font-extrabold flex items-center gap-2 text-prune">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-orange-vitamine"></span>
+            Étape 2 sur 6 • Destination &amp; Voyageurs
+          </span>
+<span class="text-xs text-prune font-bold bg-butter px-3 py-1 rounded-full">33% complété</span>
+</div>
+<!-- Thick Flat Progress Bar -->
+<div class="w-full h-4 bg-butter rounded-full overflow-hidden flex">
+<div class="h-full bg-orange-vitamine rounded-full w-2/6 transition-all duration-300"></div>
+</div>
+</header>
+<!-- Main Title & Subtitle -->
+<div class="flex flex-col gap-2">
+<h1 class="font-headline text-4xl sm:text-5xl lg:text-[54px] leading-tight text-prune uppercase tracking-tight">
+          OÙ EST-CE QU'ON T'EMMÈNE ?
+        </h1>
+<p class="text-base sm:text-lg text-prune/80 font-medium">
+          Dis-nous qui part et quelles vibrations tu recherches pour ton prochain périple taillé sur-mesure.
+        </p>
+</div>
+<!-- Form Container -->
+<form class="flex flex-col gap-9" onsubmit="event.preventDefault();">
+<!-- Section 1: Destination -->
+<div class="flex flex-col gap-3.5">
+<label class="text-base sm:text-lg font-extrabold text-prune flex items-center justify-between" for="destination-input">
+<span class="">1. Ta destination rêvée</span>
+<span class="text-xs font-semibold text-framboise">Optionnel si tu veux carte blanche</span>
+</label>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-orange-vitamine text-2xl pointer-events-none">explore</span>
+<input class="w-full h-14 pl-12 pr-4 bg-white text-prune font-medium text-base rounded-full outline-none outline-[2px] outline-[#FFE0EA] focus:outline-orange-vitamine transition-all placeholder:text-prune/40" id="destination-input" placeholder="Tape une ville ou un pays..." type="text">
+</div>
+<button class="h-14 px-6 rounded-full bg-butter text-prune font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-orange-vitamine hover:text-white transition-colors flex-shrink-0 cursor-pointer" id="surprise-btn" type="button">
+<span class="">Surprends-moi !</span>
+<span class="text-xl">✨</span>
+</button>
+</div>
+</div>
+<!-- Section 2: Popular Polaroid Inspirations -->
+<div class="flex flex-col gap-3.5">
+<span class="text-xs text-prune font-extrabold uppercase tracking-wider">
+            Ou clique sur un coup de cœur de saison
+          </span>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-1 pb-1">
+<!-- Seville Polaroid -->
+<div class="destination-card cursor-pointer bg-[#FFF9F2] rounded-2xl p-3 -rotate-2 hover:rotate-0 transition-transform duration-200 flex flex-col gap-2.5 group" onclick="selectDestination('Séville, Espagne')">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-rose-stripe">
+<img alt="Séville" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Sun-drenched Plaza de España in Seville, Spain under vivid blue skies, showing ornate terracotta architecture, sunbeams and warm Spanish tile patterns in rich orange and warm navy hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaQ4v6HbdC-0WhBkV0oc_5gazod_KQcq2La903iQgGcSGa6qV2Pd0CEmQUQRRAVrz8jx6nr3rIn4-sdUVaKm7tRAOTpXSOCPUG_n5uYMlSxZH-2IaXaMT_jdVBkkXaSVEYPShlfGtmgAaB6_w_T6is0trKvGtbmtTio6CJRpb14xU_LxXrMxDSTtM-jrsK1zGe4LQmes0a9E44_VI_kyFl1J1-0Q3N8Nnv5Bn59Zk">
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-extrabold text-sm text-prune">Séville</span>
+<span class="text-[11px] font-bold text-orange-vitamine uppercase">Soleil ☀️</span>
+</div>
+</div>
+<!-- Santorini Polaroid -->
+<div class="destination-card cursor-pointer bg-[#FFF9F2] rounded-2xl p-3 rotate-2 hover:rotate-0 transition-transform duration-200 flex flex-col gap-2.5 group" onclick="selectDestination('Santorin, Grèce')">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-rose-stripe">
+<img alt="Santorin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Iconic white houses and vibrant cobalt blue domes of Oia village in Santorini, Greece overlooking the Aegean Sea during a bright crisp golden afternoon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-IMtwfOFmwpk4wahBRWFhq_E8B4GXc71nTz5nMmZpZ8Jgc-bMBPqdRJC8QD1s8M6Zky3b1aJJAwa5czwOCbcZKnNkXKXL6YhI7wZcg85_AVqa3bqNZdEbSv8yhQ0cHfVp8-msbeQpC8tTz_R3xdz4q-Z-E6crGB0GtafEuIRqi-kFZozq7x5WK7kXJb6O8NQniuJyEgHtRp8eP7NtqjP89tOf4tYTCRHrMB-l-dE">
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-extrabold text-sm text-prune">Santorin</span>
+<span class="text-[11px] font-bold text-framboise uppercase">Vue mer 🌊</span>
+</div>
+</div>
+<!-- Bali Polaroid -->
+<div class="destination-card cursor-pointer bg-[#FFF9F2] rounded-2xl p-3 -rotate-1 hover:rotate-0 transition-transform duration-200 flex flex-col gap-2.5 group" onclick="selectDestination('Bali, Indonésie')">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-rose-stripe">
+<img alt="Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vibrant lush green Tegallalang rice terraces in Bali with morning tropical sunlight filtering through towering coconut palm fronds and misty horizons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6Vsl8p3ZwdVwhiYLYOZK5MCxR2IIR3eCK3VlBjtCsZsVMG3MH-PQ33hrkJS-vDWpHofYFmF8XNC8cJYXl7FM5kR7xpVjYlxZ9ELVuz8rEWXOww6WUeWjiJauowN7ZR2zzwcWs5q60_nmpa61k8ChUBuxmOp9UykHkn60OZ7beEol__sFQybWe0vP6ndjKuUTRoZDhr4_3-PKpOPIwqbIC6JbY1xt9jEy_YvF1izQ">
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-extrabold text-sm text-prune">Bali</span>
+<span class="text-[11px] font-bold text-orange-vitamine uppercase">Jungle 🌴</span>
+</div>
+</div>
+<!-- Split Polaroid -->
+<div class="destination-card cursor-pointer bg-[#FFF9F2] rounded-2xl p-3 rotate-3 hover:rotate-0 transition-transform duration-200 flex flex-col gap-2.5 group" onclick="selectDestination('Split, Croatie')">
+<div class="w-full h-32 rounded-xl overflow-hidden bg-rose-stripe">
+<img alt="Split" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Ancient stone promenades and vibrant turquoise harbor of Split Croatia, with wooden sailing yachts docked in front of Diocletian Palace walls under a sunny sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANvCQZvldy5jEKlCw3UFcrRHFf6j9x1Z6981MxphDkWaRiz7l8mqBmYuAO7zjyN2pj4QrknnrXvxbTlQaN5-noGalrnG9YKSvw1O6Mm5XSJGkZ7mLuiMHn2JZ0vKpvSfoKUHaltz6gpc5wy3VQJeTatMSRobubFrk99Bhn74RV8zlL2Gumr-I1IGZ-gBQz9QRF0OlLw6BMlEwMfO5QxKZUspQUpMNskYIyZhNu1j4">
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-extrabold text-sm text-prune">Split</span>
+<span class="text-[11px] font-bold text-framboise uppercase">Crique ⛵</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Dates & Voyageurs Split Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Dates Group -->
+<div class="flex flex-col gap-3.5">
+<label class="text-base sm:text-lg font-extrabold text-prune flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-vitamine">calendar_month</span>
+              2. Tes dates de voyage
+            </label>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1.5">
+<span class="text-xs font-bold text-prune">Aller</span>
+<input class="w-full h-14 px-4 bg-white text-prune font-medium text-sm sm:text-base rounded-full outline-none outline-[2px] outline-[#FFE0EA] focus:outline-orange-vitamine cursor-pointer" type="date" value="2025-05-12" placeholder="2027-05-12">
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-xs font-bold text-prune">Retour</span>
+<input class="w-full h-14 px-4 bg-white text-prune font-medium text-sm sm:text-base rounded-full outline-none outline-[2px] outline-[#FFE0EA] focus:outline-orange-vitamine cursor-pointer" type="date" value="2025-05-24" placeholder="2027-05-24">
+</div>
+</div>
+<label class="flex items-center gap-2 cursor-pointer mt-1">
+<input checked="" class="w-4 h-4 accent-orange-vitamine cursor-pointer rounded" type="checkbox">
+<span class="text-xs font-bold text-prune">Je suis flexible sur mes dates (+/- 3 jours)</span>
+</label>
+</div>
+<!-- Voyageurs Group -->
+<div class="flex flex-col gap-3.5">
+<label class="text-base sm:text-lg font-extrabold text-prune flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-vitamine">groups</span>
+              3. Les voyageurs
+            </label>
+<div class="flex flex-col gap-3">
+<!-- Adults Counter -->
+<div class="flex items-center justify-between bg-[#FFF9F2] px-5 py-3 rounded-full">
+<div class="flex flex-col">
+<span class="font-extrabold text-sm sm:text-base text-prune">Adultes</span>
+<span class="text-xs font-semibold text-prune/60">18 ans et plus</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-9 h-9 rounded-full bg-white text-prune font-bold flex items-center justify-center hover:bg-butter transition-colors" onclick="changeCount('adults', -1)" type="button">−</button>
+<span class="font-extrabold text-base text-prune w-6 text-center" id="adults-count">2</span>
+<button class="w-9 h-9 rounded-full bg-white text-prune font-bold flex items-center justify-center hover:bg-butter transition-colors" onclick="changeCount('adults', 1)" type="button">+</button>
+</div>
+</div>
+<!-- Children Counter -->
+<div class="flex items-center justify-between bg-[#FFF9F2] px-5 py-3 rounded-full">
+<div class="flex flex-col">
+<span class="font-extrabold text-sm sm:text-base text-prune">Enfants</span>
+<span class="text-xs font-semibold text-prune/60">0 à 17 ans (tarifs adaptés)</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-9 h-9 rounded-full bg-white text-prune font-bold flex items-center justify-center hover:bg-butter transition-colors" onclick="changeCount('children', -1)" type="button">−</button>
+<span class="font-extrabold text-base text-prune w-6 text-center" id="children-count">0</span>
+<button class="w-9 h-9 rounded-full bg-white text-prune font-bold flex items-center justify-center hover:bg-butter transition-colors" onclick="changeCount('children', 1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Ambiance Chips -->
+<div class="flex flex-col gap-3.5">
+<div class="flex items-center justify-between">
+<label class="text-base sm:text-lg font-extrabold text-prune flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-vitamine">auto_awesome</span>
+              4. Choisis l'ambiance désirée
+            </label>
+<span class="text-xs font-bold text-prune/70">Sélectionne 1 à 3 ambiances</span>
+</div>
+<div class="flex flex-wrap gap-3" id="vibe-container">
+<!-- Beach & Chill (Pre-selected: Rose framboise + text-butter / white) -->
+<button class="vibe-chip px-6 py-3.5 rounded-full font-extrabold text-sm sm:text-base transition-all flex items-center gap-2 bg-framboise text-butter cursor-pointer" data-selected="true" onclick="toggleVibe(this)" type="button">
+<span class="star-icon text-sm">★</span>
+<span class="">Beach &amp; Chill</span>
+</button>
+<!-- Adventure (Inactive: Butter) -->
+<button class="vibe-chip px-6 py-3.5 rounded-full font-extrabold text-sm sm:text-base transition-all flex items-center gap-2 bg-butter text-prune hover:bg-orange-vitamine hover:text-white cursor-pointer" data-selected="false" onclick="toggleVibe(this)" type="button">
+<span class="star-icon text-sm hidden">★</span>
+<span class="">Adventure</span>
+</button>
+<!-- Culture (Pre-selected: Rose framboise) -->
+<button class="vibe-chip px-6 py-3.5 rounded-full font-extrabold text-sm sm:text-base transition-all flex items-center gap-2 bg-framboise text-butter cursor-pointer" data-selected="true" onclick="toggleVibe(this)" type="button">
+<span class="star-icon text-sm">★</span>
+<span class="">Culture</span>
+</button>
+<!-- Food & Wine -->
+<button class="vibe-chip px-6 py-3.5 rounded-full font-extrabold text-sm sm:text-base transition-all flex items-center gap-2 bg-butter text-prune hover:bg-orange-vitamine hover:text-white cursor-pointer" data-selected="false" onclick="toggleVibe(this)" type="button">
+<span class="star-icon text-sm hidden">★</span>
+<span class="">Food &amp; Wine</span>
+</button>
+<!-- Nightlife -->
+<button class="vibe-chip px-6 py-3.5 rounded-full font-extrabold text-sm sm:text-base transition-all flex items-center gap-2 bg-butter text-prune hover:bg-orange-vitamine hover:text-white cursor-pointer" data-selected="false" onclick="toggleVibe(this)" type="button">
+<span class="star-icon text-sm hidden">★</span>
+<span class="">Nightlife</span>
+</button>
+<!-- Nature -->
+<button class="vibe-chip px-6 py-3.5 rounded-full font-extrabold text-sm sm:text-base transition-all flex items-center gap-2 bg-butter text-prune hover:bg-orange-vitamine hover:text-white cursor-pointer" data-selected="false" onclick="toggleVibe(this)" type="button">
+<span class="star-icon text-sm hidden">★</span>
+<span class="">Nature</span>
+</button>
+</div>
+</div>
+<!-- Action Navigation Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 mt-2">
+<!-- Return Button -->
+<button class="w-full sm:w-auto h-14 px-8 rounded-full bg-transparent outline-none outline-[2px] outline-prune text-prune font-extrabold text-base hover:bg-prune/5 transition-all flex items-center justify-center gap-2 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+<span class="">Étape précédente</span>
+</button>
+<!-- Next Step Button (Orange vitaminé) -->
+<button class="w-full sm:w-auto h-14 px-10 rounded-full bg-orange-vitamine text-prune font-black text-base hover:-translate-y-0.5 active:translate-y-0 transition-transform duration-200 flex items-center justify-center gap-3 cursor-pointer shadow-none" type="submit">
+<span class="">Étape suivante : Rythme &amp; Budget</span>
+<span class="text-xl leading-none">→</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+      function selectDestination(name) {
+        const input = document.getElementById('destination-input');
+        if (input) {
+          input.value = name;
+          input.focus();
+        }
+      }
+
+      const surprises = ['Reykjavik, Islande', 'Oaxaca, Mexique', 'Kyoto, Japon', 'Lisbonne, Portugal', 'Lofoten, Norvège'];
+      document.getElementById('surprise-btn')?.addEventListener('click', () => {
+        const random = surprises[Math.floor(Math.random() * surprises.length)];
+        selectDestination(random);
+      });
+
+      function changeCount(type, delta) {
+        const el = document.getElementById(type + '-count');
+        if (!el) return;
+        let current = parseInt(el.textContent, 10) || 0;
+        let next = current + delta;
+        if (type === 'adults' && next < 1) next = 1;
+        if (type === 'children' && next < 0) next = 0;
+        el.textContent = next;
+      }
+
+      function toggleVibe(button) {
+        const isSelected = button.getAttribute('data-selected') === 'true';
+        const star = button.querySelector('.star-icon');
+        
+        if (isSelected) {
+          button.setAttribute('data-selected', 'false');
+          button.classList.remove('bg-framboise', 'text-butter');
+          button.classList.add('bg-butter', 'text-prune', 'hover:bg-orange-vitamine', 'hover:text-white');
+          if (star) star.classList.add('hidden');
+        } else {
+          button.setAttribute('data-selected', 'true');
+          button.classList.remove('bg-butter', 'text-prune', 'hover:bg-orange-vitamine', 'hover:text-white');
+          button.classList.add('bg-framboise', 'text-butter');
+          if (star) star.classList.remove('hidden');
+        }
+      }
+    </script>
+</main>
+
+
+</body></html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Roamy - Planificateur de voyage</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"prune":"#4A0F2E","framboise":"#D6336C","framboise-deep":"#C2255C","framboise-dark":"#A61E4D","cream":"#FAF8F2","cream-warm":"#FFF6E0","blush":"#FFE0EA","butter":"#FFE99A","butter-sun":"#FFD93B","orange":"#FA7443","orange-deep":"#E8592A","coral":"#FF6F61","sky-soft":"#F8B4D9","surface-card":"#FFF0F5","on-framboise":"#ffffff","on-prune":"#FAF8F2"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"24px","space-2xl":"64px","space-md":"16px","space-xs":"4px","space-sm":"8px","space-3xl":"96px","margin":"32px","gutter":"24px","space-xl":"40px"},"fontFamily":{"caption-mobile":["Nunito"],"headline-lg-mobile":["Anton"],"body-md-mobile":["Nunito"],"headline-lg":["Anton"],"headline-sm-mobile":["Anton"],"headline-md-mobile":["Anton"],"label-lg":["Nunito"],"headline-md":["Anton"],"body-md":["Nunito"],"caption":["Nunito"],"headline-sm":["Anton"],"body-lg":["Nunito"],"body-lg-mobile":["Nunito"]},"fontSize":{"caption-mobile":["13px",{"lineHeight":"1.3","fontWeight":"600"}],"headline-lg-mobile":["48px",{"lineHeight":"1.1","letterSpacing":"0.01em","fontWeight":"400"}],"body-md-mobile":["16px",{"lineHeight":"1.5","fontWeight":"400"}],"headline-lg":["88px",{"lineHeight":"1.05","letterSpacing":"0.01em","fontWeight":"400"}],"headline-sm-mobile":["24px",{"lineHeight":"1.2","letterSpacing":"0.01em","fontWeight":"400"}],"headline-md-mobile":["36px",{"lineHeight":"1.15","letterSpacing":"0.01em","fontWeight":"400"}],"label-lg":["16px",{"lineHeight":"1.2","fontWeight":"800"}],"headline-md":["56px",{"lineHeight":"1.1","letterSpacing":"0.01em","fontWeight":"400"}],"body-md":["17px",{"lineHeight":"1.5","fontWeight":"400"}],"caption":["14px",{"lineHeight":"1.3","fontWeight":"600"}],"headline-sm":["32px",{"lineHeight":"1.15","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["20px",{"lineHeight":"1.4","fontWeight":"400"}],"body-lg-mobile":["18px",{"lineHeight":"1.4","fontWeight":"400"}]}}}};</script></head><body class="bg-cream font-body-md text-prune antialiased selection:bg-butter selection:text-prune"><header class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-blush/60"><div class="h-20 max-w-[1200px] mx-auto px-6 flex items-center justify-between"><a class="flex items-center gap-2 group" data-path="landing-page" href="#"><span class="font-headline-sm text-headline-sm text-prune tracking-tight lowercase">roamy</span><span class="material-symbols-outlined text-orange text-[26px] transform group-hover:rotate-45 transition-transform duration-300">sunny</span></a><nav class="hidden lg:flex items-center gap-8" data-active-classes="text-framboise font-bold"><a class="text-prune font-bold text-caption hover:text-orange transition-colors" data-path="comment-ca-marche" href="#">Comment ça marche</a><a class="text-prune font-bold text-caption hover:text-orange transition-colors" data-path="mon-itineraire" href="#">Exemple d'itinéraire</a><a class="text-prune font-bold text-caption hover:text-orange transition-colors" data-path="tarifs" href="#">Tarifs</a><a class="text-prune font-bold text-caption hover:text-orange transition-colors" data-path="faq" href="#">FAQ</a></nav><div class="flex items-center gap-4"><div class="flex items-center bg-blush rounded-full px-3 py-1.5"><button class="text-caption font-bold text-prune px-1.5 hover:text-orange transition-colors">FR</button><span class="text-framboise/40 text-caption px-1">|</span><button class="text-caption font-bold text-prune/60 px-1.5 hover:text-prune transition-colors">EN</button></div><a class="hidden sm:inline-flex items-center justify-center bg-orange text-white font-label-lg text-label-lg px-7 py-3 rounded-full hover:bg-orange-deep hover:-translate-y-0.5 transition-all text-center" data-path="questionnaire" href="#">Planifier mon voyage</a><div class="w-8 h-8 rounded-full bg-framboise flex items-center justify-center"><span class="material-symbols-outlined text-white text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-cream min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="w-full bg-cream pt-12 pb-24 relative overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+<!-- Left Column: Copy & Actions -->
+<div class="lg:col-span-7 flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2 bg-butter text-prune px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-orange text-[20px]">sunny</span>
+<span class="font-caption text-caption uppercase tracking-wider font-extrabold">Ton copilote vacances 100% sur-mesure</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase text-prune tracking-tight leading-[0.95]">
+          Ton voyage, planifié pour toi.
+        </h1>
+<p class="font-body-lg text-body-lg text-prune/90 max-w-xl">
+          Remplis ton questionnaire en 3 minutes. Reçois instantanément ton itinéraire personnalisé jour par jour en PDF dans ta boîte mail.
+        </p>
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<a class="inline-flex items-center justify-center bg-orange text-white font-label-lg text-label-lg h-14 px-8 rounded-full hover:bg-orange-deep transition-transform duration-200 hover:-translate-y-0.5" data-path="questionnaire" href="#">
+            Planifier mon voyage
+          </a>
+<a class="inline-flex items-center justify-center bg-transparent text-prune font-label-lg text-label-lg h-14 px-8 rounded-full outline outline-2 outline-prune hover:bg-prune hover:text-cream transition-colors duration-200" href="#apercu">
+            Voir un exemple
+          </a>
+</div>
+<!-- Social Proof Pill -->
+<div class="flex items-center gap-4 pt-4">
+<div class="flex -space-x-2">
+<div class="w-10 h-10 rounded-full bg-butter flex items-center justify-center text-prune font-extrabold text-caption">LC</div>
+<div class="w-10 h-10 rounded-full bg-framboise flex items-center justify-center text-white font-extrabold text-caption">MB</div>
+<div class="w-10 h-10 rounded-full bg-orange flex items-center justify-center text-white font-extrabold text-caption">TS</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-orange">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<span class="font-caption text-caption text-prune font-bold">4.9/5 par plus de 1 200 explorateurs</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Polaroid Collage & Hand-drawn elements -->
+<div class="lg:col-span-5 relative flex items-center justify-center min-h-[500px]">
+<!-- Vector Sun Illustration -->
+<svg class="absolute -top-6 -right-6 w-24 h-24 text-butter" fill="currentColor" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="22"></circle>
+<path d="M50 0 L50 18 M50 82 L50 100 M0 50 L18 50 M82 50 L100 50 M15 15 L28 28 M72 72 L85 85 M15 85 L28 72 M72 28 L85 15" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+<!-- Vector Flower Coral Illustration -->
+<svg class="absolute -bottom-8 -left-6 w-20 h-20 text-coral" fill="currentColor" viewBox="0 0 100 100">
+<circle cx="50" cy="30" r="16"></circle>
+<circle cx="70" cy="50" r="16"></circle>
+<circle cx="50" cy="70" r="16"></circle>
+<circle cx="30" cy="50" r="16"></circle>
+<circle class="text-butter" cx="50" cy="50" fill="#FFE99A" r="12"></circle>
+</svg>
+<!-- Vector Flower Pink Illustration -->
+<svg class="absolute top-1/2 -right-8 w-16 h-16 text-framboise" fill="currentColor" viewBox="0 0 100 100">
+<circle cx="50" cy="25" r="14"></circle>
+<circle cx="75" cy="50" r="14"></circle>
+<circle cx="50" cy="75" r="14"></circle>
+<circle cx="25" cy="50" r="14"></circle>
+<circle class="text-prune" cx="50" cy="50" fill="#4A0F2E" r="10"></circle>
+</svg>
+<!-- Polaroid 1 (Beach/Ocean, rotated -3deg) -->
+<div class="absolute -top-2 left-4 w-60 bg-white p-3 pb-8 rounded-lg transform -rotate-3 z-10">
+<div class="w-full h-56 rounded-DEFAULT overflow-hidden bg-blush">
+<img class="w-full h-full object-cover" data-alt="Sunny golden Mediterranean turquoise sea coastline with rugged cliffs and gentle azure waves, warm vintage photography aesthetic, flat clear lighting, sunny vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXzSgGGVTh159Xg9vSCiSkVv4aeSICNqJ5o2YUtBH9ZHA4bt9ktnFQ7JMmFosuPq7eS60zeL29Yq7bD7qM-A0oTWt0dBqax3JusdeRQptJPMjN6_rzMZl1pdzWiRy3obSpu3OF_d_LNUwLNrpn_mBTJ5AXiLgKVqs_U6sR6qGZJ4qFzPyVGp1cBq12HKLeQa_O2L-DsXNPzIJljTbOzqCLSBvcTtjBZg0efIapgA8">
+</div>
+<p class="font-caption text-caption text-prune font-bold text-center mt-3 lowercase">calanque secrète • 11:30</p>
+</div>
+<!-- Polaroid 2 (Drinks & Sun, rotated 3deg) -->
+<div class="absolute top-28 right-2 w-64 bg-white p-3 pb-8 rounded-lg transform rotate-3 z-20">
+<div class="w-full h-60 rounded-DEFAULT overflow-hidden bg-butter">
+<img class="w-full h-full object-cover" data-alt="Two colorful tropical cocktails with citrus slices resting on a wooden beachside cafe table facing the bright Mediterranean sun, bright vibrant aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMnmRPZWe2RZmkjT8u04vcrqL6lE13AxuDrOxsZbBVCk6tlninvg9KMZzYdn0e9WOjkWEjckqIJfMwjOxrvOo0oQ9P8giwj3u-teeO5pFX2eB8Qj4VHLQdoqaZY5IUic4feRDndwPa2AdvKC3HccNxeA_rxyGughtcXhHm-YmnogPg6GA1lFsxvT3jBWfhLhsAhvnke-E8AyQsHjdk8NdH9ygNMLpn7uW7K6ektbs">
+</div>
+<p class="font-caption text-caption text-prune font-bold text-center mt-3 lowercase">apéro coucher de soleil • 19:45</p>
+</div>
+<!-- Polaroid 3 (Friends & Road-trip, -1deg) -->
+<div class="absolute -bottom-6 left-12 w-56 bg-white p-3 pb-8 rounded-lg transform -rotate-1 z-30">
+<div class="w-full h-48 rounded-DEFAULT overflow-hidden bg-coral">
+<img class="w-full h-full object-cover" data-alt="Two smiling happy travelers with sunglasses laughing inside an open vintage convertible cruising along a scenic coastal road in southern Europe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQWj1VsWFElABKvmPGMWOwkKM6YFH3PtCtoNyyfxV8__PkvpafTmw5Jf3nNuwdUFA7uDdwjqz-MKXlCUndrilQqwk5_i_Dt6HKd-n9QZV8IaFiWbP4R6WFm7_eP3cUX9gLqX3LXQD63Ec4VlEDI1zi5hNvig6kaZnpWvgc34BYQqn5bksX7GcQEvSDwqXivYspivMAJXaZBUbq4L3wjhnctGANLErTiV2m1DbzELg">
+</div>
+<p class="font-caption text-caption text-prune font-bold text-center mt-3 lowercase">road trip liberté • jour 3</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: MARQUEE BANNER -->
+<div class="w-full bg-butter-sun py-5 overflow-hidden select-none">
+<div class="flex items-center gap-8 whitespace-nowrap animate-[marquee_20s_linear_infinite]">
+<span class="font-headline-sm text-headline-sm uppercase text-prune tracking-wider flex items-center gap-8">
+        PACK LIGHT <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        TRAVEL HAPPY &nbsp;<span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        PACK LIGHT <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        TRAVEL HAPPY <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        PACK LIGHT <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        TRAVEL HAPPY <span class="material-symbols-outlined text-orange text-[28px]">sunny</span><br></span>
+<span aria-hidden="true" class="font-headline-sm text-headline-sm uppercase text-prune tracking-wider flex items-center gap-8">
+        PACK LIGHT <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        TRAVEL HAPPY <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        ROAM FREE <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        PACK LIGHT <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        TRAVEL HAPPY <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        ROAM FREE <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        PACK LIGHT <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        TRAVEL HAPPY <span class="material-symbols-outlined text-orange text-[28px]">sunny</span>
+        ROAM FREE
+      </span>
+</div>
+</div>
+<!-- SECTION 3: HOW IT WORKS (Raspberry Framboise) -->
+<section class="w-full bg-framboise py-24 text-cream">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col gap-16">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="inline-flex items-center gap-2 bg-prune text-butter px-4 py-1.5 rounded-full mb-4">
+<span class="font-caption text-caption uppercase font-extrabold">Simplicité totale</span>
+</div>
+<h2 class="font-headline-md text-headline-md uppercase text-cream tracking-tight">
+            Comment ça marche
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-cream/90 max-w-md">
+          Oublie les 42 onglets ouverts et les guides poussiéreux. Roamy structure ton périple sans prise de tête.
+        </p>
+</div>
+<!-- 3 Flat Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 Card (Cream) -->
+<div class="bg-cream-warm text-prune rounded-xl p-8 flex flex-col justify-between min-h-[360px]">
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<span class="w-14 h-14 rounded-full bg-butter text-prune font-headline-sm text-headline-sm flex items-center justify-center">1</span>
+<span class="material-symbols-outlined text-orange text-[36px]">tune</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-prune leading-tight">
+              Dis-nous ce que&nbsp;<div class="">tu aimes
+            </div></h3>
+<p class="font-body-md text-body-md text-prune/90">
+              Tes dates, ton rythme, ton budget et tes envies : farniente, rando sauvage, street food ou culture pointue.
+            </p>
+</div>
+<div class="pt-6">
+<span class="inline-block bg-blush text-prune font-caption text-caption px-4 py-2 rounded-full font-bold">⏱️ 3 min chrono</span>
+</div>
+</div>
+<!-- Step 2 Card (Butter) -->
+<div class="bg-butter text-prune rounded-xl p-8 flex flex-col justify-between min-h-[360px]">
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<span class="w-14 h-14 rounded-full bg-prune text-butter font-headline-sm text-headline-sm flex items-center justify-center">2</span>
+<span class="material-symbols-outlined text-prune text-[36px]">psychology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-prune leading-tight">On te concocte ton roadbook sur mesure
+            </h3>
+<p class="font-body-md text-body-md text-prune/90">
+              Nos algorithmes combinés aux pépites de locaux tricotent un timing optimal, sans courir ni s'ennuyer.
+            </p>
+</div>
+<div class="pt-6">
+<span class="inline-block bg-white text-prune font-caption text-caption px-4 py-2 rounded-full font-bold">✨ Zéro piège à touriste</span>
+</div>
+</div>
+<!-- Step 3 Card (Cream) -->
+<div class="bg-cream-warm text-prune rounded-xl p-8 flex flex-col justify-between min-h-[360px]">
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<span class="w-14 h-14 rounded-full bg-orange text-white font-headline-sm text-headline-sm flex items-center justify-center">3</span>
+<span class="material-symbols-outlined text-orange text-[36px]">mark_email_read</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-prune leading-tight">
+              Télécharge ton PDF instantanément
+            </h3>
+<p class="font-body-md text-body-md text-prune/90">
+              Un carnet de voyage clair, élégant et interactif à télécharger, prêt à être glissé dans ta poche.
+            </p>
+</div>
+<div class="pt-6">
+<span class="inline-block bg-blush text-prune font-caption text-caption px-4 py-2 rounded-full font-bold">📱 Hors-ligne &amp; interactif</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: SAMPLE ROADBOOK SECTION -->
+<section class="w-full bg-cream py-24" id="apercu">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Content & Feature Checklist -->
+<div class="lg:col-span-6 flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2 bg-butter text-prune px-4 py-1.5 rounded-full">
+<span class="font-caption text-caption uppercase font-extrabold">Carnet d'évasion</span>
+</div>
+<h2 class="font-headline-md text-headline-md uppercase text-prune tracking-tight leading-[1.05]">
+          Un aperçu concret de&nbsp;<div class="">ton roadbook
+        </div></h2>
+<p class="font-body-lg text-body-lg text-prune/90">
+          Pas de bla-bla générique de guide Wikipédia. Tu reçois un véritable itinéraire prêt à l'emploi conçu pour maximiser chaque rayon de soleil.
+        </p>
+<!-- Checklist -->
+<div class="flex flex-col gap-4 w-full pt-2">
+<div class="flex items-start gap-4 p-4 rounded-lg bg-blush/60">
+<div class="w-10 h-10 rounded-full bg-butter flex items-center justify-center flex-shrink-0 text-prune">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-prune">Activités testées &amp; recommandées</h4>
+<p class="font-body-md text-body-md text-prune/80">Adresses pépites, spots de baignade préservés et restaurants typiques sans foule.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-blush/60">
+<div class="w-10 h-10 rounded-full bg-butter flex items-center justify-center flex-shrink-0 text-prune">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-prune">Timing réaliste et optimisé</h4>
+<p class="font-body-md text-body-md text-prune/80">Temps de trajet calculés, créneaux de visite idéaux et moments de détente préservés.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-blush/60">
+<div class="w-10 h-10 rounded-full bg-butter flex items-center justify-center flex-shrink-0 text-prune">
+<span class="material-symbols-outlined text-[22px]">map</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-prune">Cartes interactives intégrées</h4>
+<p class="font-body-md text-body-md text-prune/80">Liens Google Maps et coordonnées GPS en un clic depuis ton smartphone.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 bg-prune text-cream font-label-lg text-label-lg px-8 py-4 rounded-full hover:bg-framboise-deep transition-all mt-2" data-path="mon-itineraire" href="#">
+<span class="">Découvrir un carnet type</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+<!-- Mockup Roadbook Visual (Tilted Card Design) -->
+<div class="lg:col-span-6 flex justify-center relative">
+<!-- Background decorative blob/flower -->
+<svg class="absolute -top-10 -right-8 w-32 h-32 text-butter select-none pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40"></circle>
+</svg>
+<!-- Simulated PDF Document Card -->
+<div class="w-full max-w-md bg-white rounded-xl p-6 transform rotate-2 relative z-10 border border-blush/50">
+<!-- Roadbook Top bar -->
+<div class="flex items-center justify-between pb-6 border-b-2 border-blush">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-prune lowercase">roamy</span>
+<span class="material-symbols-outlined text-orange text-[20px]">sunny</span>
+</div>
+<span class="bg-butter text-prune font-caption text-caption px-3 py-1 rounded-full font-bold">PDF • 7 JOURS</span>
+</div>
+<!-- Roadbook Cover Header -->
+<div class="py-6">
+<span class="font-caption text-caption text-framboise uppercase font-extrabold tracking-wider">Itinéraire sur mesure</span>
+<h3 class="font-headline-sm text-headline-sm uppercase text-prune leading-none mt-1">Costa Brava Sauvage</h3>
+<p class="font-body-md text-body-md text-prune/80 mt-1">Gérone • Calella • Cadaqués</p>
+</div>
+<!-- Roadbook Mini Photo -->
+<div class="w-full h-44 rounded-lg overflow-hidden mb-6 bg-blush">
+<img class="w-full h-full object-cover" data-alt="A picturesque whitewashed Spanish village with bougainvillea flowers overlooking deep blue ocean water on the Costa Brava, Mediterranean travel aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEsYq7g0MkW8As6iQzgiYW-8UNNgd56D8XHLZ1xazalVpFbcWpdPrgJRI2xbDuqriXqh0fvoCvJ-v7s_MR6uQVe4uyoq3dDWNURL4Xe7dLN-zt_TYcKJtyElWO__RP7lDv6USYnbP6bMVh8X_-ihJKsJxD19E9xk7uH4d1PQZcWym3ULgkaokiY-qIoQfdCmINvf2iO9mJlcwXWCtsC5NsgU_Lpq2tpyieJoviR7Y">
+</div>
+<!-- Roadbook Day Block Breakdown -->
+<div class="flex flex-col gap-3">
+<div class="bg-blush/50 p-3 rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="bg-prune text-cream font-label-lg text-label-lg w-8 h-8 rounded-full flex items-center justify-center">J1</span>
+<div>
+<div class="font-label-lg text-label-lg text-prune">Arrivée &amp; Vieux Gérone</div>
+<div class="font-caption text-caption text-prune/80">Tapas cachées au Bar del Carmen</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-prune text-[20px]">chevron_right</span>
+</div>
+<div class="bg-blush/50 p-3 rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="bg-orange text-white font-label-lg text-label-lg w-8 h-8 rounded-full flex items-center justify-center">J2</span>
+<div>
+<div class="font-label-lg text-label-lg text-prune">Criques de Begur à pied</div>
+<div class="font-caption text-caption text-prune/80">Cala Aiguablava sans les foules</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-prune text-[20px]">chevron_right</span>
+</div>
+<div class="bg-blush/50 p-3 rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="bg-prune text-cream font-label-lg text-label-lg w-8 h-8 rounded-full flex items-center justify-center">J3</span>
+<div>
+<div class="font-label-lg text-label-lg text-prune">Cap de Creus &amp; Cadaqués</div>
+<div class="font-caption text-caption text-prune/80">Coucher de soleil au phare</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-prune text-[20px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: PRICING -->
+<section class="w-full bg-cream-warm py-24">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col gap-16">
+<!-- Heading -->
+<div class="text-center max-w-2xl mx-auto flex flex-col items-center gap-4">
+<div class="inline-flex items-center gap-2 bg-butter text-prune px-4 py-1.5 rounded-full">
+<span class="font-caption text-caption uppercase font-extrabold">Tarifs transparents</span>
+</div>
+<h2 class="font-headline-md text-headline-md uppercase text-prune tracking-tight">
+          Un prix fixe, zéro mauvaise surprise
+        </h2>
+<p class="font-body-lg text-body-lg text-prune/80">
+          Moins cher qu'une heure de ton temps passé à scroller&nbsp;<div class="">des sites contradictoires.
+        </div></p>
+</div>
+<!-- Pricing Cards Side by Side -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full items-stretch">
+<!-- Essentiel Card -->
+<div class="bg-white text-prune rounded-xl p-10 flex flex-col justify-between border border-blush">
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-prune">Essentiel</span>
+<span class="bg-blush text-prune font-caption text-caption px-3 py-1 rounded-full font-bold">Week-end &amp; court séjour</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg uppercase text-prune leading-none">9€</span>
+<span class="font-body-md text-body-md text-prune/80">/ itinéraire complet</span>
+</div>
+<p class="font-body-md text-body-md text-prune/80">
+              Parfait pour une escapade de 2 à 4 jours sans prise de tête.
+            </p>
+<ul class="flex flex-col gap-4 pt-4 font-body-md text-body-md text-prune/90">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange text-[22px]">check_circle</span>
+<span class="">Itinéraire détaillé de 1 à 4 jours</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange text-[22px]">check_circle</span>
+<span class="">Sélection de 8 restaurants &amp; bars locaux</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange text-[22px]">check_circle</span>
+<span class="">Fichier PDF à télécharger</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange text-[22px]">check_circle</span>
+<span class="">Accès carte Google Maps interactive</span>
+</li>
+</ul>
+</div>
+<div class="pt-10">
+<a class="w-full inline-flex items-center justify-center bg-transparent text-prune font-label-lg text-label-lg h-14 rounded-full outline outline-2 outline-prune hover:bg-prune hover:text-cream transition-colors" data-path="questionnaire" href="#">
+              Choisir la formule Essentiel
+            </a>
+</div>
+</div>
+<!-- Premium Card (Framboise Highlighted) -->
+<div class="bg-framboise text-butter rounded-xl p-10 flex flex-col justify-between relative shadow-none">
+<!-- Orange Pill Sticker -->
+<div class="absolute -top-4 right-8 bg-orange text-white font-label-lg text-caption uppercase px-5 py-2 rounded-full tracking-wider font-extrabold">
+            Le plus aimé
+          </div>
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-butter">Premium</span>
+<span class="bg-prune text-butter font-caption text-caption px-3 py-1 rounded-full font-bold">Jusqu'à 15 jours</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg uppercase text-butter leading-none">19€</span>
+<span class="font-body-md text-body-md text-cream/90">/ itinéraire complet</span>
+</div>
+<p class="font-body-md text-body-md text-cream">
+              L'expérience complète sur-mesure pour tes vacances annuelles et road-trips.
+            </p>
+<ul class="flex flex-col gap-4 pt-4 font-body-md text-body-md text-cream">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-butter text-[22px]">check_circle</span>
+<span class="">Itinéraire personnalisé jusqu'à 15 jours</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-butter text-[22px]">check_circle</span>
+<span class="">Spots secrets &amp; alternatives anti-pluie</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-butter text-[22px]">check_circle</span>
+<span class="">Planning heure par heure modifiable</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-butter text-[22px]">check_circle</span>
+<span class="">Carnet PDF</span>
+</li>
+<li class="flex items-center gap-3">
+
+
+</li>
+</ul>
+</div>
+<div class="pt-10">
+<a class="w-full inline-flex items-center justify-center bg-orange text-white font-label-lg text-label-lg h-14 rounded-full hover:bg-orange-deep transition-transform duration-200 hover:-translate-y-0.5" data-path="questionnaire" href="#">
+              Choisir la formule Premium
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: TESTIMONIALS (Butter background) -->
+
+<!-- SECTION 7: FAQ (Blush background) -->
+<section class="w-full bg-blush py-24">
+<div class="max-w-[900px] mx-auto px-6 flex flex-col gap-12">
+<div class="text-center flex flex-col items-center gap-4">
+<div class="inline-flex items-center gap-2 bg-butter text-prune px-4 py-1.5 rounded-full">
+<span class="font-caption text-caption uppercase font-extrabold">Foire aux questions</span>
+</div>
+<h2 class="font-headline-md text-headline-md uppercase text-prune tracking-tight">
+          Tout ce que tu dois savoir
+        </h2>
+</div>
+<!-- FAQ Accordions with framboise dividers -->
+<div class="flex flex-col divide-y divide-framboise/20">
+<!-- FAQ Item 1 -->
+<details class="group py-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer" open="">
+<summary class="flex items-center justify-between text-prune list-none">
+<span class="font-label-lg text-body-lg font-extrabold">En combien de temps est livré mon itinéraire ?</span>
+<span class="material-symbols-outlined text-orange text-[28px] group-open:rotate-45 transition-transform duration-200">add</span>
+</summary>
+<p class="font-body-md text-body-md text-prune/90 mt-4 leading-relaxed">
+            Instantanément ! Dès la validation de ton questionnaire et du règlement, on te crée ton roadbook complet au format PDF et que tu peux télécharger directement.
+          </p>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group py-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer" open="">
+<summary class="flex items-center justify-between text-prune list-none">
+<span class="font-label-lg text-body-lg font-extrabold">Est-ce que Roamy réserve les hôtels et les vols pour moi ?</span>
+<span class="material-symbols-outlined text-orange text-[28px] group-open:rotate-45 transition-transform duration-200">add</span>
+</summary>
+<p class="font-body-md text-body-md text-prune/90 mt-4 leading-relaxed">
+            Non, nous ne sommes pas une agence de voyages traditionnelle et nous ne prenons aucune commission sur tes réservations. Nous te proposons les meilleurs liens directs pour réserver tes hébergements et activités au prix réel, sans intermédiaire.
+          </p>
+</details>
+<!-- FAQ Item 3 -->
+
+<!-- FAQ Item 4 -->
+<details class="group py-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer" open="">
+<summary class="flex items-center justify-between text-prune list-none">
+<span class="font-label-lg text-body-lg font-extrabold">Le carnet fonctionne-t-il sans connexion internet à l'étranger ?</span>
+<span class="material-symbols-outlined text-orange text-[28px] group-open:rotate-45 transition-transform duration-200">add</span>
+</summary>
+<p class="font-body-md text-body-md text-prune/90 mt-4 leading-relaxed">
+            Oui, le fichier PDF est 100% hors-ligne une fois téléchargé sur ton téléphone. Les coordonnées GPS et adresses restent visibles même en plein désert ou au fond d'une calanque sans réseau.
+          </p>
+</details>
+<!-- FAQ Item 5 -->
+<details class="group py-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer" open="">
+<summary class="flex items-center justify-between text-prune list-none">
+<span class="font-label-lg text-body-lg font-extrabold">Que se passe-t-il si la météo est mauvaise sur place ?</span>
+<span class="material-symbols-outlined text-orange text-[28px] group-open:rotate-45 transition-transform duration-200">add</span>
+</summary>
+<p class="font-body-md text-body-md text-prune/90 mt-4 leading-relaxed">
+            Dans la formule Premium, chaque journée dispose d'un encart spécial « Plan B au sec » avec musées incontournables, ateliers d'artisans ou halles gourmandes couvertes.
+          </p>
+</details>
+</div>
+</div>
+</section>
+<!-- SECTION 8: FINAL CTA BANNER (Framboise Deep) -->
+<section class="w-full bg-framboise-deep py-24 text-cream relative overflow-hidden">
+<!-- Big Sun background motif -->
+<svg class="absolute -right-20 -bottom-20 w-80 h-80 text-prune/30 select-none pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="45"></circle>
+</svg>
+<div class="max-w-[1200px] mx-auto px-6 text-center flex flex-col items-center gap-8 relative z-10">
+<div class="w-16 h-16 rounded-full bg-butter flex items-center justify-center text-prune mb-2">
+<span class="material-symbols-outlined text-[36px]">flight_takeoff</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-butter tracking-tight max-w-3xl leading-[0.95]">
+        Prêt pour ta prochaine aventure ?
+      </h2>
+<p class="font-body-lg text-body-lg text-cream/90 max-w-xl">
+        Réponds au quiz en quelques clics et laisse Roamy s'occuper de tout. Tes vacances parfaites commencent ici.
+      </p>
+<div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
+<a class="inline-flex items-center justify-center bg-orange text-white font-label-lg text-label-lg h-14 px-10 rounded-full hover:bg-orange-deep transition-transform duration-200 hover:-translate-y-0.5" data-path="questionnaire" href="#">
+          Planifier mon voyage maintenant
+        </a>
+</div>
+<div class="flex items-center gap-6 pt-4 text-cream/80 font-caption text-caption">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-butter">lock</span> Paiement sécurisé
+        </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-butter">bolt</span> Génération en 3 min
+        </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-butter">sentiment_very_satisfied</span> Garantie sourire
+        </span>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-prune text-cream pt-20 pb-12 border-t border-prune/40"><div class="max-w-[1200px] mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16"><div class="lg:col-span-2 flex flex-col gap-5"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-cream tracking-tight lowercase">roamy</span><span class="material-symbols-outlined text-butter text-[24px]">sunny</span></div><p class="font-body-md text-body-md text-cream/90 max-w-sm">Le copain bienveillant et stylé qui transforme vos envies d'évasion en itinéraires millimétrés sur mesure. Zéro stress, 100% soleil.</p></div><div class="flex flex-col gap-4"></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-butter uppercase tracking-wider">L'expérience</h4><ul class="flex flex-col gap-3 font-caption text-caption text-cream/80"><li class=""><a class="hover:text-butter transition-colors" data-path="comment-ca-marche" href="#">Comment ça marche</a></li><li class=""><a class="hover:text-butter transition-colors" data-path="tarifs" href="#">Formules &amp; Tarifs</a></li><li class=""><ul class="flex flex-col gap-3 font-caption text-caption text-cream/80"><li class="" style="-webkit-user-select: text !important; outline: medium !important; box-shadow: none !important;"><a class="hover:text-butter transition-colors" data-path="faq" href="about:srcdoc#">Foire aux questions</a></li></ul></li></ul></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-butter uppercase tracking-wider">Légal &amp; Support</h4><ul class="flex flex-col gap-3 font-caption text-caption text-cream/80"><li class=""><a class="hover:text-butter transition-colors" data-path="mentions-legales" href="#">Mentions légales</a></li><li class=""><a class="hover:text-butter transition-colors" data-path="confidentialite" href="#">Politique de confidentialité</a></li><li class=""><a class="hover:text-butter transition-colors" data-path="cgv" href="#">CGV &amp; Utilisation</a></li><li class=""><a class="hover:text-butter transition-colors" data-path="contact" href="#">Nous contacter</a></li></ul></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-caption text-caption text-cream/70"><p class="">© 2026 Roamy. Conçu avec amour et soleil.</p><div class="flex items-center gap-6"><span class="text-butter">🇫🇷 Fait avec passion</span><span class="text-blush">•</span><span class="text-cream/90">Zéro frais cachés</span></div></div></div></footer>
+
+
+
+</body></html>
