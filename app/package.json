@@ -20,7 +20,6 @@
     "db:reset": "prisma migrate reset --force",
     "postinstall": "node scripts/generate-client.mjs",
     "predev": "node scripts/prepare-db.mjs",
-    "prestart": "node scripts/prepare-db.mjs",
     "qa:screenshots": "node scripts/qa-screenshots.mjs"
   },
   "dependencies": {
