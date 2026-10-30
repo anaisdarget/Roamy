@@ -11,6 +11,8 @@ const bodySchema = z.object({
   tripId: z.string().min(10).max(40),
 });
 
+export const maxDuration = 60;
+
 export async function POST(request: Request) {
   const originError = assertSameOrigin(request);
   if (originError) return originError;

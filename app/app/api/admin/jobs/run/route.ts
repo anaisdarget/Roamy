@@ -3,6 +3,8 @@ import { isAdminRequest } from "@/lib/api/guard";
 import { prisma } from "@/lib/db/prisma";
 import { runGenerationJob } from "@/lib/jobs/generation";
 
+export const maxDuration = 60;
+
 export const dynamic = "force-dynamic";
 
 /** Recover paid jobs that were not picked up (server restart, crash, etc.). */

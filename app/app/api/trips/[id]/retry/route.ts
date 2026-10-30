@@ -3,6 +3,8 @@ import { prisma } from "@/lib/db/prisma";
 import { runGenerationJob } from "@/lib/jobs/generation";
 import { assertSameOrigin, getClientIp, rateLimit, tooManyRequests } from "@/lib/api/guard";
 
+export const maxDuration = 60;
+
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const originError = assertSameOrigin(request);
   if (originError) return originError;

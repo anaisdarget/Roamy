@@ -20,7 +20,8 @@
     "db:reset": "prisma migrate reset --force",
     "postinstall": "node scripts/generate-client.mjs",
     "predev": "node scripts/prepare-db.mjs",
-    "qa:screenshots": "node scripts/qa-screenshots.mjs"
+    "qa:screenshots": "node scripts/qa-screenshots.mjs",
+    "vercel-build": "node scripts/vercel-build.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",

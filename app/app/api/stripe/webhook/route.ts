@@ -5,6 +5,8 @@ import { env } from "@/lib/config/env";
 import { getStripe } from "@/lib/payments/stripe";
 import { runGenerationJob } from "@/lib/jobs/generation";
 
+export const maxDuration = 60;
+
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
