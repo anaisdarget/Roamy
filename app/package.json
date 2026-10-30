@@ -21,7 +21,8 @@
     "postinstall": "node scripts/generate-client.mjs",
     "predev": "node scripts/prepare-db.mjs",
     "qa:screenshots": "node scripts/qa-screenshots.mjs",
-    "vercel-build": "node scripts/vercel-build.mjs"
+    "vercel-build": "node scripts/vercel-build.mjs",
+    "db:push:postgres": "node scripts/db-push-postgres.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",
